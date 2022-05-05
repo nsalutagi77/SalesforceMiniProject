@@ -1,0 +1,35 @@
+<template> 
+    <lightning-card title="Draft Project Assignments" icon-name="custom:custom42" >
+        <template if:true={draftRecord}>
+        
+        <table class="table">
+            <tr class="tr">
+                <th class="th">
+                    Projects           
+                </th>
+                <th class="th">
+                    Project Assignments          
+                </th>
+            </tr>
+            <template for:each={draftRecord} for:item="pro">  
+            <tr key={pro.id} class="tr">
+                <td class="td" >{pro.Project__r.Name}
+                </td>
+                <td class="td" >{pro.Name}
+                </td>
+            </tr>
+        </template>
+        </table>
+    </template>
+    <!--
+        <lightning-datatable data={draftRecord} columns={column} key-field="Id" hide-checkbox-column="true">
+        </lightning-datatable>
+           <template if:true={draftRecord}>
+               <template for:each={draftRecord} for:item="pro">
+                   <p key={pro.id}> {pro.Project__r.Name}</p>
+               </template>
+
+           </template> 
+           -->    
+    </lightning-card>
+</template>

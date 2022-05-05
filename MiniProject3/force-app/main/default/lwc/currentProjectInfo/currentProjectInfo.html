@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Current Project Information" icon-name="custom:custom42">
+        <div class="slds-m-around_medium">
+            <template if:true={proAssRecord}>
+                        <template for:each={proAssRecord} 
+                         for:item="pro">
+                        <p style="color:blue;" key={pro.id}>Project Name:</br><strong>{pro.Project__r.Name}</strong></p>
+                        
+                        <p style="color:blue;" key={pro.id}>Project Start Date:</br><strong>{pro.Project_Assignment_Start_Date__c}</strong></p>
+                        
+                        <p style="color:blue;" key={pro.id}>Project End Date:</br><strong>{pro.Project_Assignment_End_Date__c}</strong></p>            
+                      
+                    </template>
+            </template>   
+        </div>
+    </lightning-card>    
+</template>

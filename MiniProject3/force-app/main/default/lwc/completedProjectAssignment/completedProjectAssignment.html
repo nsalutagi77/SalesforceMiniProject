@@ -1,0 +1,33 @@
+<template> 
+    <lightning-card title="Completed Projects" icon-name="custom:custom42" >
+        <template if:true={completedRecord}>
+        
+        <table class="table">
+            <tr class="tr">
+                <th class="th">
+                    Projects           
+                </th>
+                <th class="th">
+                    Project Assignments          
+                </th>
+                <th class="th">
+                    Feedbacks          
+                </th>
+            </tr>
+            <template for:each={completedRecord} for:item="pro">  
+            <tr key={pro.id} class="tr">
+                <td class="td" >
+                    {pro.Project__r.Name}
+                </td>
+                <td class="td" >
+                    {pro.Name}
+                </td>
+                <td class="td" >
+                    {pro.Feedback__c}
+                </td>
+            </tr>
+            </template>
+        </table>
+        </template>
+    </lightning-card>
+</template>
